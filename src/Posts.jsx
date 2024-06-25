@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import Post from "./Post";
 export default function Posts() {
 
     const [posts, setPosts] = useState([]);
@@ -11,6 +11,9 @@ export default function Posts() {
     return (
         <div className="">
             <h3>Posts: {posts.length}</h3>
+            {
+                posts.map(post => <Post post={post}> </Post>)
+            }
         </div>
     )
 }
@@ -22,4 +25,5 @@ export default function Posts() {
  * 1. Create a state to store the data
  * 2. Create use effect with no dependencies
  * 3. use Fetch to load data
+ * 4. now we can loop through and show in DOM
  */
